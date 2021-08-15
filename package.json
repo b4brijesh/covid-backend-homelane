@@ -4,7 +4,8 @@
   "description": "COVID-19 microservice for Homelane",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf db_covid && nodemon",
+    "start": "rm -rf db_covid && ts-node --transpile-only ./src/handlers/api.ts",
+    "dev": "rm -rf db_covid && nodemon",
     "inspect": "rm -rf db_covid && nodemon --inspect src/handlers/api.ts",
     "test": "rm -rf db_covid && jest --runInBand",
     "lint": "npm run lint:js",
