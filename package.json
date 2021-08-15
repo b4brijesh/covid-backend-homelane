@@ -4,7 +4,7 @@
   "description": "COVID-19 microservice for Homelane",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
+    "dev": "nodemon",
     "inspect": "nodemon --inspect src/handlers/api.ts",
     "test": "rm -rf db_covid && jest --runInBand",
     "lint": "npm run lint:js",
