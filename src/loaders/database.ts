@@ -85,9 +85,7 @@ async function loadData() {
     };
     return dbRow;
   }, (progress) => {
-    if (progress % 10 == 0) {
-      logger.debug(`Loading cases: ${progress}`) // when progress === 1 the import is done
-    }
+    logger.debug(`Loading cases: ${progress}`) // when progress === 1 the import is done
   });
   await nSQL('tests').loadCSV(covidTests, row => {
     const dbRow = {
@@ -99,9 +97,7 @@ async function loadData() {
     };
     return dbRow;
   }, (progress) => {
-    if (progress % 10 == 0) {
-      logger.debug(`Loading tests: ${progress}`) // when progress === 1 the import is done
-    }
+    logger.debug(`Loading tests: ${progress}`) // when progress === 1 the import is done
   });
   await nSQL('vaccinations').loadCSV(covidVaccinations, row => {
     const dbRow = {
@@ -126,9 +122,7 @@ async function loadData() {
     };
     return dbRow;
   }, (progress) => {
-    if (progress % 10 == 0) {
-      logger.debug(`Loading vaccinations: ${progress}`) // when progress === 1 the import is done
-    }
+    logger.debug(`Loading vaccinations: ${progress}`) // when progress === 1 the import is done
   });
 }
 
