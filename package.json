@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node build/src/handlers/api.js",
-    "postinstall": "tsc",
+    "postinstall": "rm -rf build && tsc && copyfiles src/data/*.csv build/src/data",
     "dev": "rm -rf db_covid && nodemon",
     "inspect": "rm -rf db_covid && nodemon --inspect src/handlers/api.ts",
     "test": "rm -rf db_covid && jest --runInBand",
@@ -18,8 +18,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.13",
-    "@types/jest": "^27.0.1",
     "@types/lodash": "^4.14.172",
+    "@types/node": "^15.12.2",
     "@types/supertest": "^2.0.11",
     "jest": "^27.0.6",
     "supertest": "^6.1.5",
@@ -29,6 +29,7 @@
     "@nano-sql/core": "^2.3.7",
     "axios": "^0.21.1",
     "celebrate": "^15.0.0",
+    "copyfiles": "^2.4.1",
     "dayjs": "^1.10.6",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
