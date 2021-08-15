@@ -4,8 +4,6 @@
   "description": "COVID-19 microservice for Homelane",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf ./build",
     "start": "nodemon",
     "inspect": "nodemon --inspect src/handlers/api.ts",
     "test": "rm -rf db_covid && jest --runInBand",
@@ -25,7 +23,8 @@
     "nodemon": "^2.0.12",
     "supertest": "^6.1.5",
     "ts-jest": "^27.0.4",
-    "ts-node": "^10.2.0"
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
   },
   "dependencies": {
     "@nano-sql/core": "^2.3.7",
