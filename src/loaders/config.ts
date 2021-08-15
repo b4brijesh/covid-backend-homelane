@@ -13,11 +13,6 @@ if (process.env.NODE_ENV === 'local' || process.env.NODE_ENV === 'test') {
   }
 }
 
-// Required environment variables before proceeding
-if (!process.env.NODE_SLS_BASE_USERS_TABLE) {
-  throw new Error('Users table name not in env');
-}
-
 export default {
   nodeEnv: process.env.NODE_ENV,
   /**
