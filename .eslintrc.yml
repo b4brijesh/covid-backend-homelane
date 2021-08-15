@@ -1,0 +1,42 @@
+parser: '@typescript-eslint/parser' # Specifies the ESLint parser
+
+plugins:
+  - '@typescript-eslint'
+  - 'lodash'
+  - 'prettier'
+
+extends:
+  - 'eslint:recommended' # Rules recommended for all projects by the ESLint Team
+  - 'plugin:@typescript-eslint/recommended' # Recommended rules from the @typescript-eslint/eslint-plugin
+  - 'plugin:@typescript-eslint/recommended-requiring-type-checking' # Recommended type-checking rules, disable this for large projects
+  - 'plugin:lodash/recommended' # Recommended if using lodash
+  - 'plugin:prettier/recommended' # Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Always keep this last.
+
+parserOptions:
+  ecmaVersion: 2019 # Allows for the parsing of modern ECMAScript features
+  sourceType: 'module' # Allows for the use of imports
+  project: ['./tsconfig.json']
+
+# Directories to ignore linting on
+ignorePatterns:
+  - '.eslintrc.js'
+  - 'build/*'
+  - 'tests/*'
+  - 'infra/*'
+
+# Rules that are turned on/off for ease of development and code-style adherence
+rules:
+  '@typescript-eslint/explicit-member-accessibility': 'off' # Allows using default accessibility modifiers
+  '@typescript-eslint/explicit-function-return-type': 'off' # Allows function return types to not be specified
+  '@typescript-eslint/no-parameter-properties': 'off' # Allows param properties to be defined in constructors
+  '@typescript-eslint/interface-name-prefix': 'off' # Allows interface names to start with letters other than 'I'
+  '@typescript-eslint/no-explicit-any': 'off' # Allows 'any' types to be used when needed in dire cases
+  '@typescript-eslint/no-unsafe-member-access': 'off' # Allows access to properties of 'any' types
+  '@typescript-eslint/no-unsafe-assignment': 'off' # Allows updating 'any' types
+  'lodash/import-scope': 'off' # Allows importing individual functions of lodash
+  'lodash/matches-prop-shorthand': 'off' # Doesn't enforce shorthand, making refactoring easy
+  'lodash/matches-shorthand': 'off' # Doesn't enforce shorthand, making refactoring easy
+  'lodash/prop-shorthand': 'off' # Doesn't enforce shorthand, making refactoring easy
+  'no-console': 'error' # Doesn't allow console.log statements
+  'curly': 'error' # Forces if-else and loops to always have curly braces
+  'eqeqeq': ['error', 'always'] # Enforces type-safe equality comparison

@@ -1,0 +1,7 @@
+{
+  "watch": ["src", ".env"],
+  "ext": "js,ts,json,csv",
+  "ignore": ["src/**/*.spec.ts"],
+  "delay": 2500,
+  "exec": "ts-node  --transpile-only ./src/handlers/api.ts"
+}

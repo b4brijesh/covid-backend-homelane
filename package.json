@@ -1,0 +1,44 @@
+{
+  "name": "covid-backend-homelane",
+  "version": "1.0.0",
+  "description": "COVID-19 microservice for Homelane",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf ./build",
+    "start": "nodemon",
+    "inspect": "nodemon --inspect src/handlers/api.ts",
+    "test": "rm -rf db_covid && jest --runInBand",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --ignore-path .gitignore --ext .js,.ts",
+    "lint:js": "npm run lint:eslint src/",
+    "lint:fix": "npm run lint:js -- --fix"
+  },
+  "author": "Brijesh Sahoo",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.1",
+    "@types/lodash": "^4.14.172",
+    "@types/supertest": "^2.0.11",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.5",
+    "ts-jest": "^27.0.4",
+    "ts-node": "^10.2.0"
+  },
+  "dependencies": {
+    "@nano-sql/core": "^2.3.7",
+    "axios": "^0.21.1",
+    "celebrate": "^15.0.0",
+    "dayjs": "^1.10.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "source-map-support": "^0.5.19",
+    "winston": "^3.3.3"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
