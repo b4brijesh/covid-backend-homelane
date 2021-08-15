@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node build/src/handlers/api.js",
-    "postinstall": "rm -rf build && tsc && copyfiles src/data/*.csv build/src/data",
+    "postinstall": "rm -rf build && tsc && copyfiles src/data/*.csv build/",
     "dev": "rm -rf db_covid && nodemon",
     "inspect": "rm -rf db_covid && nodemon --inspect src/handlers/api.ts",
     "test": "rm -rf db_covid && jest --runInBand",
